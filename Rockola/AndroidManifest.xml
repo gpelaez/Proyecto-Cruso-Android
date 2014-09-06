@@ -5,8 +5,8 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
-        android:targetSdkVersion="21" />
+        android:minSdkVersion="9"
+        android:targetSdkVersion="20" />
 
     <application
         android:allowBackup="true"
@@ -23,8 +23,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".QRScanner"
-            android:label="@string/title_activity_qrscanner" >
+            android:name=".IngresoCodigo"
+            android:label="@string/title_activity_ingreso_codigo" >
         </activity>
     </application>
 

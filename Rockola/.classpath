@@ -5,11 +5,7 @@
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
-	<classpathentry kind="lib" path="C:/Users/Ana Lucia/Downloads/android-integration-3.1.1-20140820.112052-13.jar">
-		<attributes>
-			<attribute name="javadoc_location" value="jar:file:/C:/Users/Ana Lucia/Downloads/android-integration-3.1.1-20140820.112052-13-javadoc.jar!/"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/Ana Lucia/Documents/Android/Clase9/backendless-sdk-android/libs/backendless.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ana Lucia/Downloads/android-integration-3.1.1-20140820.112052-13-javadoc.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
