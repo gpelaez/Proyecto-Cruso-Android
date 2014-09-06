@@ -1,6 +1,7 @@
 package me.amarillo.rockola;
 
 import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,10 +20,11 @@ public class IngresoCodigo extends ActionBarActivity {
 	
 
 	
-	public void ingresarEstablecimiento(View v)
+	public void ingresarAEstablecimiento(View v)
 	{
 		EditText tvCodigo = (EditText)findViewById(R.id.etCodigo);
-		
+		Intent principal = new Intent(this, Principal.class);
+		startActivity(principal);
 	}
 	
 

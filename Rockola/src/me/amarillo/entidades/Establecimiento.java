@@ -1,5 +1,15 @@
 package me.amarillo.entidades;
 
+import me.amarillo.utiles.AmarilloResponseHandler;
+import android.util.Log;
+
+import com.backendless.Backendless;
+import com.backendless.BackendlessCollection;
+import com.backendless.async.callback.AsyncCallback;
+import com.backendless.async.callback.BackendlessCallback;
+import com.backendless.exceptions.BackendlessFault;
+import com.backendless.persistence.BackendlessDataQuery;
+
 public class Establecimiento {
 	
 	public static int DISCOTECA = 1;
@@ -64,6 +74,39 @@ public class Establecimiento {
 	}
 	public void setCodigo(String codigo) {
 		this.codigo = codigo;
+	}
+	
+	public void guardar() {
+		Backendless.Persistence.save(this,
+				new BackendlessCallback<Establecimiento>() {
+					@Override
+					public void handleResponse(Establecimiento oQuestion) {
+						Log.i("", Establecimiento.class.getSimpleName()
+								+ " creada " + oQuestion.toString());
+					}
+				});
+
+	}
+
+	public static void obtener(int id, final AmarilloResponseHandler response) {
+		String whereClause = "id = " + id;
+		BackendlessDataQuery dataQuery = new BackendlessDataQuery();
+		dataQuery.setWhereClause(whereClause);
+		Backendless.Persistence.of(Establecimiento.class).find(dataQuery,
+				new AsyncCallback<BackendlessCollection<Establecimiento>>() {
+
+			@Override
+			public void handleFault(BackendlessFault arg0) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void handleResponse(
+					BackendlessCollection<Establecimiento> respuesta) {
+				response.callbackEstablecimientos(respuesta.getData());
+			}
+		});
 	}
 	
 }
