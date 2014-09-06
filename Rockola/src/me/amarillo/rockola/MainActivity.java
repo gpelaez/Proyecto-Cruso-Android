@@ -5,13 +5,11 @@ import java.util.List;
 import me.amarillo.entidades.DJ;
 import me.amarillo.entidades.Dedicatoria;
 import me.amarillo.entidades.Establecimiento;
-import android.support.v7.app.ActionBarActivity;
+import me.amarillo.utiles.AmarilloResponseHandler;
+import android.app.Activity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import me.amarillo.utiles.*;
 
-public class MainActivity extends ActionBarActivity implements AmarilloResponseHandler{
+public class MainActivity extends Activity implements AmarilloResponseHandler{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
