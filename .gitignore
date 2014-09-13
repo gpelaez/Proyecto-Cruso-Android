@@ -30,4 +30,10 @@ Rockola/project.properties
 
 LaRockola/project.properties
 
-LaRockola/bin
+LaRockola/weborb
+
+LaRockola/weborb.tasks
+
+LaRockola/bin/*
+
+LaRockola/gen/*
