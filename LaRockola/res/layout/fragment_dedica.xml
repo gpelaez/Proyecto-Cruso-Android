@@ -13,4 +13,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/section_label"
+        android:layout_marginLeft="46dp"
+        android:layout_marginTop="53dp"
+        android:layout_toRightOf="@+id/section_label"
+        android:text="Dedicala"
+        android:textAppearance="?android:attr/textAppearanceLarge" />/>
+
 </RelativeLayout>

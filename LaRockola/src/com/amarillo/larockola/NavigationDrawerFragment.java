@@ -1,5 +1,7 @@
-package com.example.larockola;
+package com.amarillo.larockola;
 
+
+import com.amarillo.larockola.R;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
@@ -271,12 +273,16 @@ public class NavigationDrawerFragment extends Fragment {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
+		
+		
+//		mCallbacks.onNavigationDrawerItemSelected(2);
+		
 		if (mDrawerToggle.onOptionsItemSelected(item)) {
 			return true;
 		}
 
-		if (item.getItemId() == R.id.action_example) {
-			Toast.makeText(getActivity(), "Example action.", Toast.LENGTH_SHORT)
+		if (item.getItemId() == R.id.action_salir) {
+			Toast.makeText(getActivity(), "Salir.", Toast.LENGTH_SHORT)
 					.show();
 			return true;
 		}

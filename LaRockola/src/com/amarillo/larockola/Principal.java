@@ -1,5 +1,8 @@
-package com.example.larockola;
+package com.amarillo.larockola;
 
+import com.amarillo.larockola.R;
+
+import me.amarillo.fragmentos.*;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -12,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 public class Principal extends ActionBarActivity implements
 		NavigationDrawerFragment.NavigationDrawerCallbacks {
@@ -46,25 +50,40 @@ public class Principal extends ActionBarActivity implements
 	public void onNavigationDrawerItemSelected(int position) {
 		// update the main content by replacing fragments
 		FragmentManager fragmentManager = getSupportFragmentManager();
+		Fragment fragment = null;
+		
+		switch(position) {
+		case 0:
+			fragment = new DedicaFragment();
+			break;
+		case 1: 
+			fragment = new DJFragment();
+			break;
+		default:
+			Toast.makeText(this, "Error, seccion no tiene fragmento.", Toast.LENGTH_LONG).show();
+			return;
+		}
+		
 		fragmentManager
 				.beginTransaction()
-				.replace(R.id.container,
-						PlaceholderFragment.newInstance(position + 1)).commit();
+				.replace(R.id.container, fragment)
+				.commit();
+		mTitle = getResources().getStringArray(R.array.secciones)[position];
 	}
 
-	public void onSectionAttached(int number) {
-		switch (number) {
-		case 1:
-			mTitle = getString(R.string.title_section1);
-			break;
-		case 2:
-			mTitle = getString(R.string.title_section2);
-			break;
-		case 3:
-			mTitle = getString(R.string.title_section3);
-			break;
-		}
-	}
+//	public void onSectionAttached(int number) {
+//		switch (number) {
+//		case 1:
+//			mTitle = getResources().getStringArray(R.array.secciones)[0];
+//			break;
+//		case 2:
+//			mTitle = getResources().getStringArray(R.array.secciones)[1];
+//			break;
+//		case 3:
+//			mTitle = getResources().getStringArray(R.array.secciones)[2];
+//			break;
+//		}
+//	}
 
 	public void restoreActionBar() {
 		ActionBar actionBar = getSupportActionBar();
@@ -92,7 +111,7 @@ public class Principal extends ActionBarActivity implements
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
-		if (id == R.id.action_settings) {
+		if (id == R.id.action_configuracion) {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
@@ -101,41 +120,43 @@ public class Principal extends ActionBarActivity implements
 	/**
 	 * A placeholder fragment containing a simple view.
 	 */
-	public static class PlaceholderFragment extends Fragment {
+//	public static class PlaceholderFragment extends Fragment {
 		/**
 		 * The fragment argument representing the section number for this
 		 * fragment.
 		 */
-		private static final String ARG_SECTION_NUMBER = "section_number";
+//		private static final String ARG_SECTION_NUMBER = "section_number";
 
 		/**
 		 * Returns a new instance of this fragment for the given section number.
 		 */
-		public static PlaceholderFragment newInstance(int sectionNumber) {
-			PlaceholderFragment fragment = new PlaceholderFragment();
-			Bundle args = new Bundle();
-			args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-			fragment.setArguments(args);
-			return fragment;
-		}
+//		public static PlaceholderFragment newInstance(int sectionNumber) {
+//			PlaceholderFragment fragment = new PlaceholderFragment();
+//			Bundle args = new Bundle();
+//			args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+//			fragment.setArguments(args);
+//			return fragment;
+//		}
 
-		public PlaceholderFragment() {
-		}
+//		public PlaceholderFragment() {
+//		}
 
-		@Override
-		public View onCreateView(LayoutInflater inflater, ViewGroup container,
-				Bundle savedInstanceState) {
-			View rootView = inflater.inflate(R.layout.fragment_principal,
-					container, false);
-			return rootView;
-		}
-
-		@Override
-		public void onAttach(Activity activity) {
-			super.onAttach(activity);
-			((Principal) activity).onSectionAttached(getArguments().getInt(
-					ARG_SECTION_NUMBER));
-		}
-	}
+//		@Override
+//		public View onCreateView(LayoutInflater inflater, ViewGroup container,
+//				Bundle savedInstanceState) {
+//			int sectionNumber = savedInstanceState.getInt(ARG_SECTION_NUMBER);
+//
+//			View rootView = inflater.inflate(R.layout.fragment_principal,
+//						container, false);
+//			return rootView;
+//		}
+//
+//		@Override
+//		public void onAttach(Activity activity) {
+//			super.onAttach(activity);
+//			((Principal) activity).onSectionAttached(getArguments().getInt(
+//					ARG_SECTION_NUMBER));
+//		}
+//	}
 
 }
