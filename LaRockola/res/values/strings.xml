@@ -18,5 +18,21 @@
         <item>Acerca de</item>
         <item>Cambiar ubicación</item>
     </string-array>
+    <string-array name="generos">
+        <item>Ranchera</item>
+        <item>Bachata</item>
+        <item>Reggaeton</item>
+        <item>Vallenato</item>
+        <item>Pop</item>
+        <item>Rock</item>
+        <item>Reggae</item>
+    </string-array>
+        <string name="dedicala">Dedicala</string>
+        <string name="cancion">Canción</string>
+        <string name="artista">Artista</string>
+        <string name="genero">Genero</string>
+        <string name="seleccione_genero">Seleccione un género.</string>
+        <string name="dedicatoria">Dedicatoria</string>
+        <string name="para">Para</string>
 
 </resources>

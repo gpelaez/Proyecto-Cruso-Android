@@ -46,14 +46,14 @@
 		    android:contentDescription="@string/seleccione_genero"
 		    android:entries="@array/generos" />
 		
-		<CheckBox
+		<Switch
 		    android:id="@+id/sw_dedicala"
 		    android:layout_width="fill_parent"
 		    android:layout_height="wrap_content"
 		    android:layout_alignParentLeft="true"
 		    android:layout_below="@+id/sp_genero"
 		    android:text="@string/dedicala" />
-
+		
 		<EditText
 		    android:id="@+id/et_dedicatoria"
 		    android:layout_width="fill_parent"
