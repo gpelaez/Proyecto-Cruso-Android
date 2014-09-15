@@ -1,7 +1,7 @@
 package me.amarillo.fragmentos;
 
 import com.amarillo.larockola.R;
-
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -38,20 +38,34 @@ public class DedicaFragment extends Fragment {
 		spGenero = (Spinner) rootView.findViewById(R.id.sp_genero);
 		
     	etDedica.setVisibility(View.INVISIBLE);  
-    	etDedica.setVisibility(View.INVISIBLE);
+    	etPara.setVisibility(View.INVISIBLE);
 		
 //		if(viewDedicala instanceof CheckBox) {
 //			CheckBox cbDedicala = (CheckBox) viewDedicala;
 			viewDedicala.setOnClickListener(new OnClickListener() {  // checkbox listener
-			    public void onClick(View v) {
+			    @SuppressLint("NewApi")
+				public void onClick(View v) {
 			        // Perform action on clicks, depending on whether it's now checked
-			        if (((CheckBox) v).isChecked()) {
-			        	etDedica.setVisibility(View.VISIBLE);
-			        	etPara.setVisibility(View.VISIBLE);
-			        } else if (((CheckBox) v).isChecked() == false) {
-			        	etDedica.setVisibility(View.INVISIBLE); //gone=2  
-			        	etDedica.setVisibility(View.INVISIBLE);
-			        }
+			    	if (v instanceof CheckBox) {
+			    		CheckBox c = (CheckBox) v;
+						if (c.isChecked()) {
+				        	etDedica.setVisibility(View.VISIBLE);
+				        	etPara.setVisibility(View.VISIBLE);
+				        } else if (c.isChecked() == false) {
+				        	etDedica.setVisibility(View.INVISIBLE); //gone=2  
+				        	etPara.setVisibility(View.INVISIBLE);
+				        }
+					} else if(v instanceof Switch) {
+						Switch s = (Switch) v;
+						if (s.isChecked()) {
+				        	etDedica.setVisibility(View.VISIBLE);
+				        	etPara.setVisibility(View.VISIBLE);
+				        } else if (s.isChecked() == false) {
+				        	etDedica.setVisibility(View.INVISIBLE); //gone=2  
+				        	etPara.setVisibility(View.INVISIBLE);
+				        }
+					}
+			        
 			    }
 			});
 
